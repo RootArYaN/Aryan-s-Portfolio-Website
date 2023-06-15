@@ -1,0 +1,226 @@
+html {
+  background: black;
+  scroll-behavior: smooth;
+}
+ul,
+li,
+a {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+
+.text {
+  position: absolute;
+  flex-wrap: wrap;
+  font-size: 75px;
+  text-shadow: 0 0 30px white;
+  color: white;
+  transition: color  0.8s ease-in-out;
+  top: 25vh;
+  left: 29vh;
+}
+
+
+.text:hover {
+  color: #cd6b29;
+}
+
+.text1 {
+  position: absolute;
+  width: fit-content;
+  flex-wrap: wrap;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 40px;
+  text-shadow: 0 0 30px rgb(217, 217, 217);
+  background-image: linear-gradient(60deg, #b721ff, #26ff9d, #ffec19, #ff417a);
+  background-size: 200%;
+  background-position: 0;
+  animation: moveGradient 6s alternate infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: color 0.8s ease-in-out;
+  top: 45vh;
+  left: 30vh;
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100%;
+  }
+}
+
+.text1:hover {
+  color: #ff0000;
+}
+
+#canvas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100% ; /* Subtract the height of the navigation bar */
+}
+
+/* Set background and padding for the navigation bar */
+nav {
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #c62828;
+  background-color: inherit;
+  padding: 14px 16px;
+  cursor: pointer;
+  margin-right: 20px;
+  animation: spaceAnimation 1s ease-in;
+}
+
+/* Style the dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  z-index: 1;
+  margin-right: 20px;
+}
+
+/* Style the dropdown links */
+.dropdown-content a {
+  color: #ca2a2a;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  animation: swapAnimation 1s infinite;
+}
+
+@keyframes spaceAnimation {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/* Style the dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Style the logo text */
+.logo {
+  color: #fff;
+  font-size: 24px;
+  margin-left: 20px;
+  z-index: 100;
+
+}
+
+/* Style the logo container */
+#logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+  animation: spaceAnimation 1s ease-in;
+}
+
+/* Style the logo */
+#logo {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Style the logo characters */
+.logo-character {
+  font-size: 2rem;
+  flex-wrap: wrap;
+  padding: 0 0.3rem;
+  color: #ffffff;
+  background-image: linear-gradient(to right , #26ff9d , #ff417a);
+  background-size: 200%;
+  background-position: 0;
+  animation: moveGradient 6s alternate infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Define the rearrange animation */
+@keyframes rearrangeAnimation {
+  0% {
+    transform: rotate(0deg);
+    color: #af3737;
+  }
+  25% {
+    transform: rotate(90deg);
+    color: #af3737;
+  }
+  50% {
+    transform: rotate(-180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    color: #379faf;
+  }
+  100% {
+    transform: rotate(-360deg);
+    color: #379faf;
+  }
+}
+
+/* Apply the rearrange animation when logo characters are hovered */
+#logo-container:hover #logo .logo-character {
+  animation: rearrangeAnimation 2s infinite;
+}
+
+.nav-list {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin-right: 120px;
+}
+
+/* Style the list items */
+.nav-item {
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+  
+}
+
+/* Define the swap animation */
+@keyframes swapAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10px);
+    color: #379faf;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Apply the swap animation on hover */
+.nav-item:hover {
+  animation: swapAnimation 1s infinite;
+}
