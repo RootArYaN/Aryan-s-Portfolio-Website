@@ -12,9 +12,11 @@
     <link rel="manifest" href="favicon_io\site.webmanifest" />
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body onload="load()">
+  <div id="loader"></div>
+  <section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <div id="canvas-container"></div>    
+    <div id="canvas-container"></div>   
     <nav>      
         <div id="logo-container">
           <div id="logo">
@@ -41,5 +43,14 @@
     <p class="text" onmouseover="changeText(this)" onmouseout="resetText(this)" data-original-text="Welcome">Hello.</p>
     <p class="text1" onmouseover="changeText(this)" onmouseout="resetText(this)" data-original-text="To my website">I am Aryan</p>
     <script src="script.js"></script>
+    </section>
+<script>
+  const loader1 = document.getElementById('loader');
+  function load(){
+  setTimeout(function() {
+    loader1.style.display = 'none';
+      }, 4500);
+  }   
+</script>
   </body>
 </html>
