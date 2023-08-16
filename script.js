@@ -18,7 +18,7 @@ function init() {
 
   const geometry = new THREE.IcosahedronGeometry(0.5, 0);
   const material = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.4, metalness: 1.0 });
-  const separation = 1.5;
+  const separation = 1;
   const count = 12;
   const radius = (count * separation) / (2 * Math.PI);
 
